@@ -1,14 +1,16 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
-body {    
+
+body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(20,20,20);
-    color: white;   
+    background-color: rgb(20, 20, 20);
+    color: white;
 }
-h1{
+
+h1 {
     text-align: center;
     margin: 40px 0;
 }
@@ -17,7 +19,7 @@ h1{
 #offer>p {
     text-align: center;
     background-color: red;
-    padding: 8px;
+    padding: 5px;
     font-size: 15px;
     cursor: pointer;
 }
@@ -184,18 +186,18 @@ footer>div>p {
     cursor: pointer;
 }
 
-#crauser-1 {
+.crauser {
     width: 100%;
-    position: relative;    
+    position: relative;
     margin-bottom: 80px;
 }
 
-#crauser-1>img {
-    width: 100%;  
-    cursor: pointer; 
+.crauser>img {
+    width: 100%;
+    cursor: pointer;
 }
 
-#crauser-1>button {
+.crauser>button {
     position: absolute;
     top: 40%;
     color: rgba(255, 0, 0, 0.5);
@@ -207,46 +209,92 @@ footer>div>p {
     cursor: pointer;
 }
 
-#crauser-1>:nth-child(2) {
+.crauser>:nth-child(2) {
     left: 10px;
 }
 
-#crauser-1>:nth-child(3) {
+.crauser>:nth-child(3) {
     right: 10px;
 }
 
-#best-sellers{
+#crauser-2 {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+#crauser-2>img {
+    width: 35%;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.slider {
     display: flex;
     justify-content: space-between;
     margin: auto;
-    width: 90%;                        
-}
-#best-sellers>div{
-    width: 22%;
-    margin: 0 10px;
-    background-color: rgb(227,227,227);
-    border: 0px solid red;  
-    line-height: 22px;
-    border-radius: 10px;           
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;           
-}
-#best-sellers>div>img{
-    width: 100%;
+    width: 90%;
 }
 
-#best-sellers>div>div{
-   border: 0px solid red;            
-   background-color: white; 
-   padding: 10px;
-   border-radius: 10px;
-   margin: 5px;
+.slider>div {
+    width: 23%;
+    margin: 0 10px;
+    background-color: rgb(227, 227, 227);
+    line-height: 22px;
+    border-radius: 10px;
 }
-#best-sellers button{
+
+.slider>div>img {
+    width: 80%;
+    margin-left: 35px;
+}
+
+.slider>div>div {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 23px;
+}
+
+.slider button {
     width: 100%;
     padding: 10px;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: bold;
     border-radius: 5px;
     border: none;
+}
+
+#headphones, #superheroes {
+    display: flex;
+    justify-content: center;
+}
+
+#headphones>span, #superheroes>span {
+    margin: 20px 60px;
+    color: teal;
+    cursor: pointer;
+}
+
+#headphones+hr, #superheroes+hr {
+    width: 35%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+#market>img{
+    width: 100%;
+}
+#brand>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 50px;
+    width: 60%;
+}
+#brand>div img{
+    width: 60%;
 }

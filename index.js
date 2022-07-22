@@ -1,3 +1,52 @@
+// ---------------------------------------------login-form------------------------------------------------------
+
+document.querySelector("#logo>img:first-of-type").addEventListener("click", openForm);
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+document.querySelector("#myForm button").addEventListener("click", openLogin);
+function openLogin() {
+    window.location.href = "./login.html";
+}
+// ---------------------------------------------collections------------------------------------------------------
+let collections = [
+    "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/dropdown-TWS_480x.png?v=1612338251",
+    "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/Rectangle271_540x.png?v=1612338387",
+    "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/pro_gear_720x.jpg?v=1648546494",
+    "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/latest_background_b4f773ca-05d9-41cc-a7cf-3104993ae895_540x.png?v=1612338356",
+    "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/box-5_540x.png?v=1612338436",
+    "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/Collections_5baef8f1-a67a-40a5-a537-4258c6caae6a_540x.png?v=1622452897",
+    "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/bence-boros-253214-unsplash_720x.jpg?v=1648545875",
+    "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/New-Category-Banners_with-Trebal_09_720x.png?v=1615033153",
+    "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/dropdown-limited-edition_540x.png?v=1612338560",
+    "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/MISFIT-shop_720x.png?v=1624859990",
+    "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/Immortal_category_Image_720x.png?v=1626094103",
+];
+
+document.querySelector("#boat+div>ul>li:first-child").addEventListener("mouseover", display_Collection);
+
+function display_Collection() {
+    document.getElementById("collections").innerHTML = null;
+    collections.forEach(function (elem) {
+        let div = document.createElement("div");
+        let Img = document.createElement("img");
+        Img.setAttribute("src", elem);
+        Img.addEventListener("click", collectionPage);
+        div.append(Img);
+        document.getElementById("collections").append(div);
+    });
+}
+
+document.getElementById("collections").addEventListener("mouseleave", noDisplay);
+
+function noDisplay() {
+    document.getElementById("collections").innerHTML = null;
+}
+function collectionPage(){
+    window.location.href="./collectionsPage.html";
+}
+
+// -------------------------------------------------crauser-1-------------------------------------------------
 let crauser_1 = [
     "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/gif--new_1200x.gif?v=1658249062",
     "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/deal-of-the-day-new_1200x.png?v=1657957011",
@@ -26,7 +75,19 @@ leftBtn.addEventListener("click", function () {
     }
     crauser.src = crauser_1[imageState];
 });
+/*----------------------------------------------Add to Cart function-----------------------------------------------*/
 
+let cart = JSON.parse(localStorage.getItem("cartList")) || [];
+
+    function addToCart(elem, index) {        
+        let cartAdd = {
+            prodName: elem.prodName,
+            prodPrice: elem.price,           
+        };
+        cart.push(cartAdd);
+
+        localStorage.setItem("cartList", JSON.stringify(cart));
+    }
 
 /*-------------------------------------------------Best Seller----------------------------------------------------*/
 
@@ -682,31 +743,31 @@ let text_1 = document.querySelector("#headphones>span:nth-child(1)");
 let text_2 = document.querySelector("#headphones>span:nth-child(2)");
 let text_3 = document.querySelector("#headphones>span:nth-child(3)");
 
-function wirelessFunc() {    
-    text_1.style.color="red";    
-    text_1.style.textDecoration="underline";
-    text_2.style.color="teal";    
-    text_2.style.textDecoration="none";
-    text_3.style.color="teal";    
-    text_3.style.textDecoration="none";
+function wirelessFunc() {
+    text_1.style.color = "red";
+    text_1.style.textDecoration = "underline";
+    text_2.style.color = "teal";
+    text_2.style.textDecoration = "none";
+    text_3.style.color = "teal";
+    text_3.style.textDecoration = "none";
     trendFunc(wireless);
 }
-function ancFunc() {    
-    text_2.style.color="red";    
-    text_2.style.textDecoration="underline";
-    text_1.style.color="teal";    
-    text_1.style.textDecoration="none";
-    text_3.style.color="teal";    
-    text_3.style.textDecoration="none";
+function ancFunc() {
+    text_2.style.color = "red";
+    text_2.style.textDecoration = "underline";
+    text_1.style.color = "teal";
+    text_1.style.textDecoration = "none";
+    text_3.style.color = "teal";
+    text_3.style.textDecoration = "none";
     trendFunc(best_sellers);
 }
-function wiredFunc() {    
-    text_3.style.color="red";    
-    text_3.style.textDecoration="underline";
-    text_1.style.color="teal";    
-    text_1.style.textDecoration="none";
-    text_2.style.color="teal";    
-    text_2.style.textDecoration="none";
+function wiredFunc() {
+    text_3.style.color = "red";
+    text_3.style.textDecoration = "underline";
+    text_1.style.color = "teal";
+    text_1.style.textDecoration = "none";
+    text_2.style.color = "teal";
+    text_2.style.textDecoration = "none";
     trendFunc(trending_wired);
 }
 
@@ -749,17 +810,17 @@ function trendFunc(trendData) {
     });
 }
 /*-------------------------------------------------Grooming----------------------------------------------------*/
-let grooming=[
+let grooming = [
     {
-        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/95535146-e50a-49fe-803e-18add07a0759_400x.png?v=1625045778" ,
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/95535146-e50a-49fe-803e-18add07a0759_400x.png?v=1625045778",
         prodName: "Misfit T200",
         review: "4.8 | 39 reviews",
         price: "₹1649",
-        save:"You Save: ₹2350 (59%)",
+        save: "You Save: ₹2350 (59%)",
     },
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main_blue_400x.png?v=1630060654",
-        prodName:"Misfit T50 Trimmer",
+        prodName: "Misfit T50 Trimmer",
         review: "4.9 | 16 reviews",
         price: "₹989",
         save: "You Save: ₹1510 (60%)",
@@ -833,18 +894,18 @@ document.querySelector("#superheroes>span:nth-child(2)").addEventListener("click
 let dc_1 = document.querySelector("#superheroes>span:nth-child(1)");
 let mrvl_2 = document.querySelector("#superheroes>span:nth-child(2)");
 
-function DCFunc() {    
-    dc_1.style.color="red";    
-    dc_1.style.textDecoration="underline";
-    mrvl_2.style.color="teal";    
-    mrvl_2.style.textDecoration="none";   
+function DCFunc() {
+    dc_1.style.color = "red";
+    dc_1.style.textDecoration = "underline";
+    mrvl_2.style.color = "teal";
+    mrvl_2.style.textDecoration = "none";
     heroFunc(trending_wired);
 }
-function marvelFunc() {    
-    mrvl_2.style.color="red";    
-    mrvl_2.style.textDecoration="underline";
-    dc_1.style.color="teal";    
-    dc_1.style.textDecoration="none";    
+function marvelFunc() {
+    mrvl_2.style.color = "red";
+    mrvl_2.style.textDecoration = "underline";
+    dc_1.style.color = "teal";
+    dc_1.style.textDecoration = "none";
     heroFunc(top_earbuds);
 }
 
@@ -887,17 +948,17 @@ function heroFunc(trendData) {
     });
 }
 /*-------------------------------------------------Home Audio----------------------------------------------------*/
-let home_audio=[
+let home_audio = [
     {
-        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main_03786e84-2bf4-4d79-acc7-adaf74b052f0_300x.png?v=1647671737" ,
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main_03786e84-2bf4-4d79-acc7-adaf74b052f0_300x.png?v=1647671737",
         prodName: "boAt Aavante Bar 900",
         review: "5.0 | 3 reviews",
         price: "₹3199",
-        save:"You Save: ₹2791 (59%)",
+        save: "You Save: ₹2791 (59%)",
     },
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/aavante-bar-1160-2_b0b3aa4f-c695-4157-857c-1864c2ac947f_600x.png?v=1629091906",
-        prodName:"boAt Aavante Bar 1150",
+        prodName: "boAt Aavante Bar 1150",
         review: "4.9 | 16 reviews",
         price: "₹4499",
         save: "You Save: ₹5491 (55%)",
@@ -970,3 +1031,15 @@ function display_home_audio(data) {
 
 
 /*------------------------------------------Brand Promise-------------------------------------------------*/
+
+document.querySelector("#logo>img:nth-child(4)").addEventListener("click", openCart);
+
+/* Set the width of the sidebar to 250px (show it) */
+function openCart() {
+    document.getElementById("sidePanel").style.width = "250px";
+  }
+  
+  /* Set the width of the sidebar to 0 (hide it) */
+  function closeCart() {
+    document.getElementById("sidePanel").style.width = "0";
+  }

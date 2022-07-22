@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account</title>
-    <link rel="stylesheet" href="./loginStyles.css">
-    <link rel="stylesheet" href="./index.css" />
+    <title>Buy Earbuds, Headphones, Earphones at India's No.1 Earwear Brand: boAt</title>     
+    <link rel="stylesheet" href="./collectionsPage.css">     
 </head>
 
 <body>
@@ -35,23 +34,26 @@
     </nav>
     <div class="form-popup" id="myForm">
         <form action="/login.html" class="form-container">
-            <p>Hi boAthead!</p>
-            <button type="submit" class="btn">Login</button>
+          <p>Hi boAthead!</p>      
+          <button type="submit" class="btn">Login</button>          
         </form>
     </div>
     <div id="collections"></div>
-    <div id="container">
-        <h1>Register</h1>
-        <h3>Please fill in the fields below:</h3>
-        <form id="signUp">
-            <input id="fName" type="text" placeholder="First Name">
-            <input id="lName" type="text" placeholder="Last Name">
-            <input id="eMail" type="email" placeholder="Email">
-            <input id="passWord" type="password" placeholder="Password">
-            <input type="submit" value="CREATE ACCOUNT"></input>
-            <p>Already have an account? <span><a href="./login.html">Login</a></span></p>
-        </form>
+    <div>
+        <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Stone-Speakers_Catgry-web_5ddac427-ef95-4cc3-bcd7-5f08ab93359d.jpg?v=1634903645">
     </div>
+    <h1>Collection</h1>
+    <div id="sortBar">
+        <label for="">Sort by </label>
+    <select name="sort" id="sort">
+        <option value="Featured">Featured</option>
+        <option value="A-Z">Alphabetically, A-Z</option>
+        <option value="Z-A">Alphabetically, Z-A</option>
+        <option value="lth">Price, low to high</option>
+        <option value="htl">Price, high to low</option>
+    </select>
+    </div>    
+    <div id="container" class="slider"></div>
     <footer>
         <div>
             <p>India's fastest growing audio & wearables brand. The most incredible range of wireless earphones,
@@ -135,7 +137,5 @@
 </body>
 
 </html>
-
-<script src="./signUp.js">
+<script src="collectionsPage.js">    
 </script>
-<script src="./index.js"></script>

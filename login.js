@@ -1,8 +1,8 @@
-document.querySelector("form").addEventListener("submit", myLogIn);
+document.querySelector("#logIn").addEventListener("submit", myLogIn);
 
 let loggedIn_Data = JSON.parse(localStorage.getItem("logIn", "obj")) || [];
 
-function myLogIn() {
+function myLogIn(event) {
     event.preventDefault();
     //console.log("inside")
     let logged_Mail = document.querySelector("#eMail").value;

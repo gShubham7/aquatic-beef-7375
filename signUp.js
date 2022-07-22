@@ -1,8 +1,8 @@
-document.querySelector("form").addEventListener("submit", mySignUp);
+document.querySelector("#signUp").addEventListener("submit", mySignUp);
 
 let signUp_Data = JSON.parse(localStorage.getItem("uDetails", "signUp_Data")) || [];
 
-function mySignUp() {
+function mySignUp(event) {
     event.preventDefault();
     //console.log("inside")
     let fName = document.querySelector("#fName").value;

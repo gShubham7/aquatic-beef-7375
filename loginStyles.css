@@ -38,7 +38,7 @@ form {
     position: relative;
 }
 
-input {
+form input {
     width: 80%;
     margin-top: 20px;
     line-height: 50px;
@@ -50,7 +50,7 @@ input {
     font-size: 18px;
 }
 
-input[type="submit"] {
+form input[type="submit"] {
     background-color: red;
     color: white;
     border-radius: 5px;

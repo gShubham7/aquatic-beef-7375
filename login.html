@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>loginPage</title>
-    <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="./loginStyles.css">
+    <link rel="stylesheet" href="./index.css" />
 </head>
 
 <body>
@@ -33,6 +33,13 @@
             <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/navigation-Icon-3.png?v=1655206047">
         </div>
     </nav>
+    <div class="form-popup" id="myForm">
+        <form action="/login.html" class="form-container">
+            <p>Hi boAthead!</p>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+    <div id="collections"></div>
     <div id="container">
         <h1>Login</h1>
         <h3>Please enter your e-mail and password:</h3>
@@ -40,7 +47,7 @@
             <img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/facebook_circle_color-512.png">
             <img src="https://icons-for-free.com/download-icon-Google-1320568266385361674_512.png">
         </div>
-        <form>
+        <form id="logIn">
             <input id="eMail" type="email" placeholder="E-mail">
             <input id="passWord" type="password" placeholder="Password">
             <span><a href="">Forgot Password?</a></span>
@@ -134,3 +141,4 @@
 
 <script src="./login.js">
 </script>
+<script src="./index.js"></script>

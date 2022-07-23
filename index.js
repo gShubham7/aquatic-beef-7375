@@ -1,14 +1,101 @@
-// ---------------------------------------------login-form------------------------------------------------------
+// ---------------------------login-form--------------------------------------
 
 document.querySelector("#logo>img:first-of-type").addEventListener("click", openForm);
 function openForm() {
     document.getElementById("myForm").style.display = "block";
+
 }
 document.querySelector("#myForm button").addEventListener("click", openLogin);
 function openLogin() {
     window.location.href = "./login.html";
 }
-// ---------------------------------------------collections------------------------------------------------------
+document.getElementById("closePopup").addEventListener("click", closePopup);
+function closePopup() {
+    document.getElementById("myForm").style.display = "none";
+}
+// --------------------------more-tab-panel-------------------------------------
+document.querySelector("#boat+div>ul>li:last-child").addEventListener("mouseover", display_moreTab);
+function display_moreTab() {
+    document.querySelector("#moreTab").style.display = "block";
+}
+document.querySelector("#moreTab").addEventListener("mouseleave", noDisplay_moreTab);
+function noDisplay_moreTab() {
+    document.querySelector("#moreTab").style.display = "none";
+}
+// --------------------------side-panel-cart-------------------------------------
+
+document.querySelector("#logo>img:nth-child(4)").addEventListener("click", openCart);
+function openCart() {
+    document.getElementById("sidePanel").style.width = "400px";
+}
+document.querySelector("#closebtn>span+span").addEventListener("click", closeCart);
+function closeCart() {
+    document.getElementById("sidePanel").style.width = "0";
+}
+// ----------------------------------------------------------------------------
+
+let inCartItems = JSON.parse(localStorage.getItem("cartList")) || [];
+
+window.addEventListener("load", function () {
+    displayData(inCartItems);
+});
+
+function displayData(inCartItems) {
+    //console.log("inside func")
+    document.querySelector("#cart").innerHTML = "";
+    let total = 0;
+    inCartItems.map(function (elem, index) {
+        let strPrice = elem.prodPrice;
+        let numPrice = strPrice.replace("₹", "").replace(",", "");
+        total += Number(numPrice);
+        let div = document.createElement("div");
+        let div_img = document.createElement("div");
+        let cartImg = document.createElement("img");
+        cartImg.setAttribute("src", elem.prodImg);
+        div_img.append(cartImg);
+        let details_div = document.createElement("div");
+        let H4 = document.createElement("h4");
+        H4.innerText = elem.prodName
+        let Price = document.createElement("p");
+        Price.innerText = elem.prodPrice;
+        Price.style.color = "red";
+        let deletItem = document.createElement("p");
+        deletItem.innerText = "Delete";
+        deletItem.addEventListener("click", function () {
+            deleteCart(index);
+        });
+        details_div.append(H4, Price, deletItem);
+        div.append(div_img, details_div);
+
+        document.querySelector("#cart").append(div);
+    });
+
+    let itemToal = document.querySelector("#closebtn>span");
+    itemToal.innerText = inCartItems.length;
+    let span = document.querySelector("#cart+div>p>span")
+    span.innerText = "Rs." + total + ".00";
+    //console.log(total)
+}
+
+function deleteCart(index) {
+    let deletedCart = inCartItems.filter(function (elem, i) {
+        return i != index;
+    });
+
+    localStorage.setItem("cartList", JSON.stringify(deletedCart));
+    displayData(deletedCart);
+}
+// -------------------------------payment---------------------------------------------
+document.querySelector("#cart+div>button").addEventListener("click", openPaymentPage);
+function openPaymentPage() {
+
+    if (inCartItems.length != 0) {
+        window.location.href = "./payment.html";
+    } else {
+        alert("Cart is empty");
+    }
+}
+// -------------------------------collections----------------------------------
 let collections = [
     "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/dropdown-TWS_480x.png?v=1612338251",
     "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/Rectangle271_540x.png?v=1612338387",
@@ -42,11 +129,11 @@ document.getElementById("collections").addEventListener("mouseleave", noDisplay)
 function noDisplay() {
     document.getElementById("collections").innerHTML = null;
 }
-function collectionPage(){
-    window.location.href="./collectionsPage.html";
+function collectionPage() {
+    window.location.href = "./collectionsPage.html";
 }
 
-// -------------------------------------------------crauser-1-------------------------------------------------
+// ---------------------------crauser-1-----------------------------
 let crauser_1 = [
     "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/gif--new_1200x.gif?v=1658249062",
     "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/deal-of-the-day-new_1200x.png?v=1657957011",
@@ -75,21 +162,22 @@ leftBtn.addEventListener("click", function () {
     }
     crauser.src = crauser_1[imageState];
 });
-/*----------------------------------------------Add to Cart function-----------------------------------------------*/
+/*-----------------Add to Cart function--------------------*/
 
 let cart = JSON.parse(localStorage.getItem("cartList")) || [];
 
-    function addToCart(elem, index) {        
-        let cartAdd = {
-            prodName: elem.prodName,
-            prodPrice: elem.price,           
-        };
-        cart.push(cartAdd);
+function addToCart(elem, index) {
+    let cartAdd = {
+        prodImg: elem.img,
+        prodName: elem.prodName,
+        prodPrice: elem.price,
+    };
+    cart.push(cartAdd);
 
-        localStorage.setItem("cartList", JSON.stringify(cart));
-    }
+    localStorage.setItem("cartList", JSON.stringify(cart));
+}
 
-/*-------------------------------------------------Best Seller----------------------------------------------------*/
+/*--------------------------Best Seller------------------------*/
 
 let best_sellers = [
     {
@@ -192,7 +280,7 @@ function display_best_sellers(data) {
         document.querySelector("#best-sellers").append(div);
     });
 }
-/*-------------------------------------------------Deals of The Day----------------------------------------------------*/
+/*-----------------------Deals of The Day-----------------------*/
 
 let deals = [
     {
@@ -295,7 +383,93 @@ function display_deals(data) {
         document.querySelector("#deals-of-the-day").append(div);
     });
 }
-/*-------------------------------------------------Smart Watches----------------------------------------------------*/
+/*------------------------------gifs------------------------------*/
+let gifs = [
+    {
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/quinn_3kG8zNFCCQdbMnsdkb9vL_card_thumbnail.mp4?v=678322443058806729",
+        prodIcon: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/wave-call--4_64x64.png?v=1658295340",
+        prodName: "boAt Airdopes 131 PRO",
+        review: "Smart Watches",
+        price: "₹1299",
+    },
+    {
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/quinn_04aTzxw4cfATkGtXaCxyi_card_thumbnail.mp4?v=5396489848204085494",
+        prodIcon: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/3_2_64x64.png?v=1657293557",
+        prodName: "boAt Airdopes 131 - Wireless Earbuds",
+        review: "Rockerzz Wireless",
+        price: "₹1299",
+    },
+    {
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/quinn_33Y-hrJvgwdrFKuZ5AnlH_card_thumbnail.mp4?v=12809403617936412587",
+        prodIcon: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/413-black_64x64.png?v=1658298863",
+        prodName: "boAt Watch Wave Lite",
+        review: "Airpods TWS",
+        price: "₹1799",
+    },
+    {
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/quinn_Z0-RLJlUCNvOBH3jAQq0V_card_thumbnail.mp4?v=17400666481025471640",
+        prodIcon: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-image-4_1_64x64.png?v=1656016935",
+        prodName: "boAt Airdopes 141",
+        review: "Smart Watches",
+        price: "₹1799",
+    },
+    {
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/quinn_TEOU8UAlAUDTpZMMWWP02_card_thumbnail.mp4?v=17948985268532355974",
+        prodIcon: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend-pro-3_64x64.png?v=1658298359",
+        prodName: "boAt Airdopes 131 PRO",
+        review: "Smart Watches",
+        price: "₹1299",
+    },
+];
+
+window.addEventListener("load", function () {
+    display_gifs(gifs);
+    let myVideos = document.querySelectorAll(".myVids");
+    for (let i = 0; i < myVideos.length; i++) {
+        myVideos[i].autoplay = true;
+        myVideos[i].loop = true;
+        myVideos[i].muted = true;
+    }
+});
+
+function display_gifs(data) {
+
+    data.map(function (elem, index) {
+
+        let div = document.createElement("div");
+        let Image = document.createElement("video");
+        Image.setAttribute("class", "myVids");
+        Image.setAttribute("src", elem.img);
+        // let div1 = document.createElement("div");
+        let Icon = document.createElement("img");
+        Icon.setAttribute("src", elem.prodIcon)
+        let Name = document.createElement("h4");
+        Name.innerText = elem.prodName;
+        Name.style.color = "black";
+        let Review = document.createElement("p");
+        Review.style.color = "teal";
+        Review.innerText = elem.review;
+        let Hr = document.createElement("hr");
+        Hr.style.color = "teal";
+        let newLaunch = document.createElement("p");
+        newLaunch.style.color = "red";
+        newLaunch.innerText = "New Launches";
+        let Price = document.createElement("h4");
+        Price.innerText = elem.price;
+        Price.style.color = "red";
+
+        // div1.append(Icon, Name, Review, Hr, newLaunch, Price);
+
+        div.append(Image, Icon, Name, Review, Hr, newLaunch, Price);
+
+        document.querySelector("#gifs").append(div);
+    });
+}
+
+
+
+
+/*----------------------Smart Watches------------------------------*/
 let smart_watches = [
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend_black_300x.png?v=1650387008",
@@ -397,7 +571,7 @@ function display_watches(data) {
         document.querySelector("#smart-watches").append(div);
     });
 }
-/*-------------------------------------------------Trending Wireless----------------------------------------------------*/
+/*-------------------------Trending Wireless-----------------------*/
 let wireless = [
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ed46e58c-9643-43e0-b350-9539d293aa51_600x.png?v=1625045114",
@@ -499,7 +673,7 @@ function display_wireless(data) {
         document.querySelector("#trending-wireless").append(div);
     });
 }
-/*-------------------------------------------------Top Earbuds----------------------------------------------------*/
+/*-------------------------------Top Earbuds---------------------*/
 let top_earbuds = [
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_300x.png?v=1642405569",
@@ -602,7 +776,7 @@ function display_earbuds(data) {
     });
 }
 
-/*-------------------------------------------------New Launches----------------------------------------------------*/
+/*------------------------------New Launches---------------------*/
 let crauser_2 = [
     "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/image-3.png?v=1657607507",
     "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Untitled-2_6b2b235d-7fb0-45e1-b9ba-8890ec81b172.jpg?v=1657439033",
@@ -630,7 +804,7 @@ leftBtn_2.addEventListener("click", function () {
     crauser2.src = crauser_2[imageState_2];
 });
 
-/*-------------------------------------------------Trending Wired----------------------------------------------------*/
+/*-----------------------------Trending Wired-----------------*/
 let trending_wired = [
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/103b_300x.png?v=1574927262",
@@ -655,6 +829,7 @@ let trending_wired = [
     },
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/7d635fe4-8c4c-4c4b-8c00-6065455dc608_300x.png?v=1625046386",
+        prodName: "boAt BassHeads 103",
         review: "4.8 | 1356 reviews",
         price: "₹549",
         save: "You Save: ₹941 (63%)",
@@ -730,7 +905,7 @@ function display_wired(data) {
         document.querySelector("#trending-wired").append(div);
     });
 }
-/*-----------------------------------------------Trending Headphones--------------------------------------------------*/
+/*------------------------Trending Headphones-----------------*/
 window.addEventListener("load", function () {
     trendFunc(trending_wired);
 });
@@ -809,7 +984,7 @@ function trendFunc(trendData) {
         document.querySelector("#trending-headphones").append(div);
     });
 }
-/*-------------------------------------------------Grooming----------------------------------------------------*/
+/*-------------------------------Grooming---------------------------*/
 let grooming = [
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/95535146-e50a-49fe-803e-18add07a0759_400x.png?v=1625045778",
@@ -884,7 +1059,7 @@ function display_grooming(data) {
     });
 }
 
-/*----------------------------------------------boAt | Superheroes--------------------------------------------------*/
+/*------------------------boAt | Superheroes-------------------------*/
 window.addEventListener("load", function () {
     heroFunc(trending_wired);
 });
@@ -947,7 +1122,7 @@ function heroFunc(trendData) {
         document.querySelector("#boat-superheroes").append(div);
     });
 }
-/*-------------------------------------------------Home Audio----------------------------------------------------*/
+/*---------------------------Home Audio----------------------------*/
 let home_audio = [
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main_03786e84-2bf4-4d79-acc7-adaf74b052f0_300x.png?v=1647671737",
@@ -1021,25 +1196,47 @@ function display_home_audio(data) {
         document.querySelector("#home-audio").append(div);
     });
 }
-/*-------------------------------------------------boAt Blogs----------------------------------------------------*/
+/*---------------------------boAt Blogs--------------------------------*/
+let blogs = [
+    {
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Earphone_1296x_540x_25759241-1386-4661-bec0-bad7c111178f_540x.png?v=1650620291",
+        h2: "Earphones Buying Guide - Everything You Need To KnowO",
+    },
+    {
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Main-banner_520x500_540x_d7c9944e-0985-498b-9a89-3a54d32c9dd2_520x.png?v=1650620307",
+        h2: "The Ultimate Smartwatch Guide - Get The World On Your Wrist",
+    },
+    {
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/articles/Storm-Pro-Blog_600x.jpg?v=1657704485",
+        h2: "Smart Got Good Looking: boAt Storm Pro Smartwatch is Here to Kick a Storm",
+    },
+];
+
+window.addEventListener("load", function () {
+    display_blogs(blogs);
+});
+
+function display_blogs(data) {
+
+    data.map(function (elem, index) {
+
+        let div = document.createElement("div");
+        let Image = document.createElement("img");
+        Image.setAttribute("src", elem.img);
+        let H2 = document.createElement("h2");
+        H2.innerText = elem.h2;
+
+        div.append(Image, H2);
+
+        document.querySelector("#blogs").append(div);
+    });
+}
+
+/*---------------------What They Say About Us:-------------------------*/
 
 
-/*------------------------------------------What They Say About Us:-------------------------------------------------*/
+/*------------------------In The Press----------------------------------*/
 
 
-/*------------------------------------------In The Press-------------------------------------------------*/
+/*------------------------Brand Promise----------------------------------*/
 
-
-/*------------------------------------------Brand Promise-------------------------------------------------*/
-
-document.querySelector("#logo>img:nth-child(4)").addEventListener("click", openCart);
-
-/* Set the width of the sidebar to 250px (show it) */
-function openCart() {
-    document.getElementById("sidePanel").style.width = "250px";
-  }
-  
-  /* Set the width of the sidebar to 0 (hide it) */
-  function closeCart() {
-    document.getElementById("sidePanel").style.width = "0";
-  }

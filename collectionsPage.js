@@ -1,14 +1,14 @@
-let allProds=[
+let allProds = [
     {
-        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/95535146-e50a-49fe-803e-18add07a0759_400x.png?v=1625045778" ,
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/95535146-e50a-49fe-803e-18add07a0759_400x.png?v=1625045778",
         prodName: "Misfit T200",
         review: "4.8 | 39 reviews",
         price: "₹1649",
-        save:"You Save: ₹2350 (59%)",
+        save: "You Save: ₹2350 (59%)",
     },
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main_blue_400x.png?v=1630060654",
-        prodName:"Misfit T50 Trimmer",
+        prodName: "Misfit T50 Trimmer",
         review: "4.9 | 16 reviews",
         price: "₹989",
         save: "You Save: ₹1510 (60%)",
@@ -28,71 +28,71 @@ let allProds=[
         save: "You Save: ₹730 (49%)",
     },
     {
-        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/553af994-244a-4b81-9d9e-9967a1b966b3_300x.png?v=1656750183" ,
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/553af994-244a-4b81-9d9e-9967a1b966b3_300x.png?v=1656750183",
         prodName: "boAt BassHeads 100",
         review: "4.8 | 407 reviews",
         price: "₹379",
-        save:"You Save: ₹620 (62%)",
+        save: "You Save: ₹620 (62%)",
     },
     {
-        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_300x.png?v=1641801688" ,
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_300x.png?v=1641801688",
         prodName: "boAt Rockerz 330",
         review: "4.8 | 258 reviews",
         price: "₹1499",
-        save:"You Save: ₹1491 (50%)",
+        save: "You Save: ₹1491 (50%)",
     },
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/6b237ddc-f894-4dfd-a474-2435f93e6611_300x.png?v=1625046507",
         prodName: "boAt Rockerz 255",
         review: "4.8 | 224 reviews",
         price: "₹999",
-        save:"You Save: ₹1991 (67%)",
+        save: "You Save: ₹1991 (67%)",
     },
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/f87f98c3-9b52-4f7f-9ebe-dd10ee9517d9_300x.png?v=1633152280",
         prodName: "boAt BassHeads 102",
         review: "4.8 | 154 reviews",
         price: "₹399",
-        save:"You Save: ₹891 (69%)",
+        save: "You Save: ₹891 (69%)",
     },
     {
-        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/553af994-244a-4b81-9d9e-9967a1b966b3_300x.png?v=1656750183" ,
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/553af994-244a-4b81-9d9e-9967a1b966b3_300x.png?v=1656750183",
         prodName: "boAt BassHeads 100",
         review: "4.8 | 407 reviews",
         price: "₹379",
-        save:"You Save: ₹620 (62%)",
+        save: "You Save: ₹620 (62%)",
     },
     {
-        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_300x.png?v=1641801688" ,
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_300x.png?v=1641801688",
         prodName: "boAt Rockerz 330",
         review: "4.8 | 258 reviews",
         price: "₹1499",
-        save:"You Save: ₹1491 (50%)",
+        save: "You Save: ₹1491 (50%)",
     },
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/6b237ddc-f894-4dfd-a474-2435f93e6611_300x.png?v=1625046507",
         prodName: "boAt Rockerz 255",
         review: "4.8 | 224 reviews",
         price: "₹999",
-        save:"You Save: ₹1991 (67%)",
+        save: "You Save: ₹1991 (67%)",
     },
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/f87f98c3-9b52-4f7f-9ebe-dd10ee9517d9_300x.png?v=1633152280",
         prodName: "boAt BassHeads 102",
         review: "4.8 | 154 reviews",
         price: "₹399",
-        save:"You Save: ₹891 (69%)",
+        save: "You Save: ₹891 (69%)",
     },
     {
-        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/MG_600x.png?v=1657775492" ,
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/MG_600x.png?v=1657775492",
         prodName: "boAt Airdopes 131 PRO",
         review: "5.0 | 2 reviews",
         price: "₹1299",
-        save:"You Save: ₹1691 (57%)",
+        save: "You Save: ₹1691 (57%)",
     },
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/cream_600x.png?v=1642405569",
-        prodName:"boAt Airdopes 131 - Wireless Earbuds",
+        prodName: "boAt Airdopes 131 - Wireless Earbuds",
         review: "4.8 | 1116 reviews",
         price: "₹1299",
         save: "You Save: ₹1691 (57%)",
@@ -112,15 +112,15 @@ let allProds=[
         save: "You Save: ₹2991 (67%)",
     },
     {
-        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/MG_600x.png?v=1657775492" ,
+        img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/MG_600x.png?v=1657775492",
         prodName: "boAt Airdopes 131 PRO",
         review: "5.0 | 2 reviews",
         price: "₹1299",
-        save:"You Save: ₹1691 (57%)",
+        save: "You Save: ₹1691 (57%)",
     },
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/cream_600x.png?v=1642405569",
-        prodName:"boAt Airdopes 131 - Wireless Earbuds",
+        prodName: "boAt Airdopes 131 - Wireless Earbuds",
         review: "4.8 | 1116 reviews",
         price: "₹1299",
         save: "You Save: ₹1691 (57%)",
@@ -146,7 +146,7 @@ window.addEventListener("load", function () {
 });
 
 function display_allProds(data) {
-    document.querySelector("#container").innerHTML=null;
+    document.querySelector("#container").innerHTML = null;
     data.map(function (elem, index) {
 
         let div = document.createElement("div");
@@ -193,19 +193,93 @@ document.querySelector("#myForm button").addEventListener("click", openLogin);
 function openLogin() {
     window.location.href = "./login.html";
 }
-/*----------------------------------------------Add to Cart function-----------------------------------------------*/
+/*----------------------------side-panel-------------------------------*/
+document.querySelector("#logo>img:nth-child(4)").addEventListener("click", openCart);
+function openCart() {
+    document.getElementById("sidePanel").style.width = "400px";
+}
+document.querySelector("#closebtn>span+span").addEventListener("click", closeCart);
+function closeCart() {
+    document.getElementById("sidePanel").style.width = "0";
+}
+
+// ----------------------------------------------------------------------------
+
+let inCartItems = JSON.parse(localStorage.getItem("cartList")) || [];
+
+window.addEventListener("load", function () {
+    displayData(inCartItems);
+});
+
+function displayData(inCartItems) {
+    //console.log("inside func")
+    document.querySelector("#cart").innerHTML = "";
+    let total = 0;
+    inCartItems.map(function (elem, index) {
+        let strPrice = elem.prodPrice;
+        let numPrice = strPrice.replace("₹", "").replace(",", "");
+        total += Number(numPrice);
+        let div = document.createElement("div");
+        let div_img = document.createElement("div");
+        let cartImg = document.createElement("img");
+        cartImg.setAttribute("src", elem.prodImg);
+        div_img.append(cartImg);
+        let details_div = document.createElement("div");
+        let H4 = document.createElement("h4");
+        H4.innerText = elem.prodName
+        let Price = document.createElement("p");
+        Price.innerText = elem.prodPrice;
+        Price.style.color = "red";
+        let deletItem = document.createElement("p");
+        deletItem.innerText = "Delete";
+        deletItem.addEventListener("click", function () {
+            deleteCart(index);
+        });
+        details_div.append(H4, Price, deletItem);
+        div.append(div_img, details_div);
+
+        document.querySelector("#cart").append(div);
+    });
+
+    let itemToal = document.querySelector("#closebtn>span");
+    itemToal.innerText = inCartItems.length;
+    let span = document.querySelector("#cart+div>p>span")
+    span.innerText = "Rs." + total + ".00";
+    //console.log(total)
+}
+
+function deleteCart(index) {
+    let deletedCart = inCartItems.filter(function (elem, i) {
+        return i != index;
+    });
+
+    localStorage.setItem("cartList", JSON.stringify(deletedCart));
+    displayData(deletedCart);
+}
+// -------------------------------payment---------------------------------------------
+document.querySelector("#cart+div>button").addEventListener("click", openPaymentPage);
+function openPaymentPage() {
+
+    if (inCartItems.length != 0) {
+        window.location.href = "./payment.html";
+    } else {
+        alert("Cart is empty");
+    }
+}
+/*----------------------------Add to Cart function-------------------------------*/
 
 let cart = JSON.parse(localStorage.getItem("cartList")) || [];
 
-    function addToCart(elem, index) {        
-        let cartAdd = {
-            prodName: elem.prodName,
-            prodPrice: elem.price,           
-        };
-        cart.push(cartAdd);
+function addToCart(elem, index) {
+    let cartAdd = {
+        prodImg: elem.img,
+        prodName: elem.prodName,
+        prodPrice: elem.price,
+    };
+    cart.push(cartAdd);
 
-        localStorage.setItem("cartList", JSON.stringify(cart));
-    }
+    localStorage.setItem("cartList", JSON.stringify(cart));
+}
 // ---------------------------------------------collections------------------------------------------------------
 let collections = [
     "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/dropdown-TWS_480x.png?v=1612338251",
@@ -240,45 +314,45 @@ document.getElementById("collections").addEventListener("mouseleave", noDisplay)
 function noDisplay() {
     document.getElementById("collections").innerHTML = null;
 }
-function collectionPage(){
-    window.location.href="./collectionsPage.html";
+function collectionPage() {
+    window.location.href = "./collectionsPage.html";
 }
 // ---------------------------------------------filter------------------------------------------------------
 
 document.querySelector("#sort").addEventListener("change", sortProds);
 
-function sortProds() {        
-    let selected = document.querySelector("#sort").value; 
+function sortProds() {
+    let selected = document.querySelector("#sort").value;
     if (selected != "Featured") {
         if (selected == "A-Z") {
-     
-            allProds.sort(function (a, b) {               
+
+            allProds.sort(function (a, b) {
                 if (a.prodName.toUpperCase() > b.prodName.toUpperCase()) return 1;
                 if (a.prodName.toUpperCase() < b.prodName.toUpperCase()) return -1;
                 return 0;
             });
-    
+
             display_allProds(allProds);
-    
+
         }
-    
+
         if (selected == "Z-A") {
             allProds.sort(function (a, b) {
                 if (a.prodName.toUpperCase() > b.prodName.toUpperCase()) return -1;
                 if (a.prodName.toUpperCase() < b.prodName.toUpperCase()) return 1;
                 return 0;
             });
-    
+
             display_allProds(allProds);
         }
-    
+
         // if (selected == "htl") {
         //     allProds.sort(function (a, b) {                
         //         return b.price - a.price;
         //     });
         //     display_allProds(allProds);
         // }
-    
+
         // if (selected == "lth") {
         //     allProds.sort(function (a, b) {
         //         return a.price - b.price;
@@ -286,9 +360,9 @@ function sortProds() {
         //     display_allProds(allProds);
         // }         
 
-    }else{
+    } else {
         display_allProds(allProds);
-    }    
+    }
 }
 
 

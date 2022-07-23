@@ -7,21 +7,7 @@
     <title>Buy Earbuds, Headphones, Earphones at India's No.1 Earwear Brand: boAt</title>
     <link rel="stylesheet" href="./index.css">
     <style>
-        #deals-clock>div{
-            width: 40%;
-            margin: auto;
-            padding: 10px;
-            text-align: center;
-            background-color: yellow;
-            color: black;
-            font-weight: bold;
-            border-radius: 10px;
-        }
-        #deals-clock+p{
-            text-align: center;
-            margin-top: 10px;
-            font-weight: bold;
-        }  
+         
     </style>
 </head>
 
@@ -31,15 +17,16 @@
     </div>
     <nav>
         <div id="boat">
-            <img
+            <a href="./index.html"><img
                 src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Boat-Logo_200x_200x_f9c79bf9-9c9a-477d-ab6a-7c889a1f2f70_170x.png?v=1646731229">
+            </a>            
         </div>
         <div>
             <ul>
                 <li>Shop &#709; </li>
                 <li>Daily Deals</li>
-                <li><a href="./login.html">Offer Zone</a></li>
-                <li><a href="./signup.html">More &#709;</a></li>
+                <li>Offer Zone</li>
+                <li>More &#709;</li>
             </ul>
         </div>
         <div id="logo">
@@ -49,23 +36,37 @@
             <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/navigation-Icon-3.png?v=1655206047">
         </div>
     </nav>
+    <!-- --------------------more tab pop-------------------------- -->
+    <div id="moreTab" class="moretab">
+        <ul>
+            <li>Gifting</li>
+            <li>Do What Floats Your boAt</li>
+            <li>Blogs</li>
+            <li>Meet The boAtheads</li>
+            <li>Corporate Orders</li>
+            <li>Earn Rs. 100</li>
+            <li>Careers</li>
+            <li>Social Responsibility</li>
+        </ul>                     
+    </div>
+    <!-- --------------------------login-popup----------------------- -->
     <div class="form-popup" id="myForm">
         <form action="/login.html" class="form-container">
+            <a id="closePopup">&times;</a>
           <p>Hi boAthead!</p>      
           <button type="submit" class="btn">Login</button>          
         </form>
     </div>
-       <!-- ---------------------------------------------------side Panel-------------------------------------------- -->
-       <div id="sidePanel" class="sidepanel">
-        <a class="closebtn" onclick="closeCart()">Your Cart <span></span> &times;</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
-      </div>          
-        <h2>Collapsed Sidepanel</h2>
-        <p>Content...</p>
-    <!-- --------------------------------------------------side Panel--------------------------------------------- -->
+       <!-- ----------------------side-panel-------------------------- -->     
+        <div id="sidePanel" class="sidepanel">
+            <a id="closebtn">Your Cart has (<span></span> items)<span>&times;</span></a>  
+            <div id="cart"></div>
+            <div>
+                <p>Total : <span></span></p>
+                <button>PAY VIA CARD/OTHERS</button>
+            </div>             
+          </div>             
+    <!-- ------------------------------------------------------------------ -->
     <div id="collections"></div>
     <div id="crauser-1" class="crauser">
         <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/A131-banner-new_3_1200x.png?v=1658304483">
@@ -75,12 +76,10 @@
     <div>
         <h1>Best Sellers</h1>
         <div id="best-sellers" class="slider"></div>
-        <h1>Deals of The Day</h1>
-        <div>DAILY DEALS Ending in: <span>clock</span></div>
-        <div id="deals-clock"></div>
-        <p>View All ></p>
+        <h1>Deals of The Day</h1>        
         <div id="deals-of-the-day" class="slider"></div>
-        <div id="videos"></div>
+        <div id="gifs" class="slider">
+        </div>
         <h1>Smart Watches</h1>
         <div id="smart-watches" class="slider"></div>
         <h1>Trending Wireless</h1>
@@ -112,39 +111,43 @@
         <h1>Home Audio</h1>
         <div id="home-audio" class="slider"></div>
     </div>
-    <div>
+    <div id="blogColor">
         <h1>boAt Blogs</h1>
         <div>
-            <div>
-                <img src="" alt="">
-                <h3></h3>
+            <div id="blogs">             
             </div>
-            <div>
-                <img src="" alt="">
-                <h3></h3>
+            <div><button>EXPLORE BLOGS</button>
             </div>
-            <div>
-                <img src="" alt="">
-                <h3></h3>
-            </div>
-            <button>EXPLORE BLOGS</button>
+        </div>        
+    </div>
+    <div id="crauser-3">
+        <div>
+            <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Fierce_-Flamboyant_-Fearless_jpg_563x.jpg?v=1651227694">
+        </div>
+        <div>
+            <h1>Meet the boAtheads</h1>
+            <h3>K L RAHUL</h3>
+            <h1>Fierce. Flamboyant. Fearless.</h1>
+            <p>When you hear the crowd roar, be assured that it's KL Rahul making his way to the field. Our hardcore boAthead, KL Rahul, hits it with his performance as well as his fashion statement. On or off field, Rahul always makes #MoveOfTheChampions.</p>
         </div>
     </div>
-    <div id="crauser-3"></div>
-    <div>
+    <div id="about">
         <h1>What They Say About Us:</h1>
-        <div>
+        <div id="about-us">
             <div>
-                <img src="" alt="">
-                <h3></h3>
+                <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/testi-1200_284x.png?v=1649980899">
+                <h4>"It is value for money, best sound especially bass"</h4>
+                <button>SHOP</button>
             </div>
             <div>
-                <img src="" alt="">
-                <h3></h3>
+                <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/testimonial-img-2_284x.png?v=1649668053">
+                <h4>"The battery backup is something unbelievable"</h4>
+                <button>SHOP</button>
             </div>
             <div>
-                <img src="" alt="">
-                <h3></h3>
+                <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/testimonial-img-3_284x.png?v=1649668053">
+                <h4>Amazing product great sound quality and the mic performance is also awesome</h4>
+                <button>SHOP</button>
             </div>
         </div>
     </div>
@@ -175,21 +178,23 @@
         </div>
         <div id="footer-container">
             <div>
-                <img
-                    src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Boat-Logo_200x_200x_f9c79bf9-9c9a-477d-ab6a-7c889a1f2f70_170x.png?v=1646731229"><br>
+                <a href="./index.html"><img
+                    src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Boat-Logo_200x_200x_f9c79bf9-9c9a-477d-ab6a-7c889a1f2f70_170x.png?v=1646731229">
+                </a><br>
                 <p>Subscribe to email alerts. We promise not to spam your inbox.</p>
                 <div><input type="text" placeholder="Email Address*"><button>SUBSCRIBE</button></div>
                 <div id="social-media">
-                    <img src="https://www.viajandoando.es/img/no/1299f2f21ac1de5c7f661ca8f190d06f.png">
-                    <img src="">
-                    <img src="">
-                    <img src="">
+                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-128.png">
+                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-128.png">
+                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-128.png">
+                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Youtube3_svg-256.png">
+                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Linkedin2_svg-128.png">
                 </div>
             </div>
             <div>
                 <ul>
                     <li>
-                        <h3>SHOP</h3>
+                    <h3>SHOP</h3>
                     </li>
                     <li>True Wireless Earbuds</li>
                     <li>Wireless Headphones</li>
@@ -208,7 +213,7 @@
             <div>
                 <ul>
                     <li>
-                        <h3>HELP</h3>
+                    <h3>HELP</h3>
                     </li>
                     <li>Track Your Order</li>
                     <li>Warranty & Support</li>
@@ -222,7 +227,7 @@
             <div>
                 <ul>
                     <li>
-                        <h3>COMPANY</h3>
+                    <h3>COMPANY</h3>
                     </li>
                     <li>About boAt</li>
                     <li>News</li>

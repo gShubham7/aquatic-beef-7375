@@ -104,8 +104,8 @@ li>a {
     align-items: center;
 }
 
-#boat>img {
-    width: 20%;
+#boat img {
+    width: 80%;
     height: 40px;
     margin-left: 30px;
     cursor: pointer;
@@ -198,7 +198,7 @@ footer>div>p {
     width: 35%;
 }
 
-#footer-container>div>img {
+#footer-container>div>a img {
     width: 20%;
     margin-bottom: 20px;
     cursor: pointer;
@@ -304,4 +304,100 @@ select {
     color: white;
     font-size: 18px;
     font-weight: bold;
+}
+
+.sidepanel {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    background-color: white;
+    /* Black*/
+    color: black;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+}
+
+#closebtn {
+    position: absolute;
+    top: 0;
+}
+
+.sidepanel #closebtn>span+span {
+    position: relative;
+    left: 60px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+#cart>div {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid teal;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+#cart>div>div {
+    margin: 5px;
+}
+
+#cart>div>div:first-child {
+    width: 25%
+}
+
+#cart>div>div:first-child>img {
+    width: 100%;
+}
+
+#cart p,
+#cart+div>p {
+    font-weight: bold;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+#cart+div>p>span {
+    position: absolute;
+    right: 5px;
+}
+
+#cart+div>button {
+    width: 90%;
+    padding: 10px 0;
+    cursor: pointer;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    border: 3px solid red;
+    border-radius: 5px;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
 }

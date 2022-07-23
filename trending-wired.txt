@@ -22,6 +22,7 @@ trending_wired=[
     },
     {
         img: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/7d635fe4-8c4c-4c4b-8c00-6065455dc608_300x.png?v=1625046386",
+        prodName: "boAt BassHeads 103",
         review: "4.8 | 1356 reviews",
         price: "₹549",
         save: "You Save: ₹941 (63%)",

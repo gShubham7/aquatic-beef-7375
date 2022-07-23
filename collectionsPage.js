@@ -202,7 +202,15 @@ document.querySelector("#closebtn>span+span").addEventListener("click", closeCar
 function closeCart() {
     document.getElementById("sidePanel").style.width = "0";
 }
-
+// --------------------------more-tab-panel-------------------------------------
+document.querySelector("#boat+div>ul>li:last-child").addEventListener("mouseover", display_moreTab);
+function display_moreTab() {
+    document.querySelector("#moreTab").style.display = "block";
+}
+document.querySelector("#moreTab").addEventListener("mouseleave", noDisplay_moreTab);
+function noDisplay_moreTab() {
+    document.querySelector("#moreTab").style.display = "none";
+}
 // ----------------------------------------------------------------------------
 
 let inCartItems = JSON.parse(localStorage.getItem("cartList")) || [];

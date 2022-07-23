@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: rgb(37, 37, 37);
 }
@@ -8,12 +12,16 @@ h1 {
 }
 
 h3 {
-    text-align: center;
     margin-bottom: 40px;
 }
 
-#container {
+#container>h1,
+#container>h1+h3 {
+    text-align: center;
+    color: white;
+}
 
+#container {
     width: 60%;
     margin: auto;
     padding-bottom: 50px;
@@ -33,12 +41,18 @@ h3 {
     margin: 0 5px;
 }
 
-form {
+#logIn,
+#signUp,
+#payPage,
+#OTP_Page {
     text-align: center;
     position: relative;
 }
 
-form input {
+#logIn input,
+#signUp input,
+#payPage input,
+#OTP_Page input {
     width: 80%;
     margin-top: 20px;
     line-height: 50px;
@@ -50,7 +64,10 @@ form input {
     font-size: 18px;
 }
 
-form input[type="submit"] {
+#logIn input[type="submit"],
+#signUp input[type="submit"],
+#payPage input[type="submit"],
+#OTP_Page input[type="submit"] {
     background-color: red;
     color: white;
     border-radius: 5px;
@@ -59,19 +76,22 @@ form input[type="submit"] {
     border: none;
 }
 
-form>span {
+#logIn>span,
+#signUp>span {
     position: absolute;
     right: 100px;
     bottom: 165px;
 }
 
-form>span>a {
+#logIn>span>a,
+#signUp>span>a {
     color: rgb(190, 190, 185);
     font-size: 18px;
     font-weight: bold;
 }
 
-form>p {
+#logIn>p,
+#signUp>p {
     margin-top: 30px;
 }
 

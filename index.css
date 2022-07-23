@@ -19,10 +19,16 @@ body {
     z-index: 9;
 }
 
+#myForm a {
+    display: flex;
+    justify-content: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+
 #myForm p {
     color: red;
 }
-
 
 .form-container {
     padding: 10px;
@@ -104,8 +110,8 @@ li>a {
     align-items: center;
 }
 
-#boat>img {
-    width: 20%;
+#boat img {
+    width: 80%;
     height: 40px;
     margin-left: 30px;
     cursor: pointer;
@@ -115,6 +121,24 @@ nav>div {
     width: 50%;
     display: flex;
     justify-content: space-evenly;
+}
+
+#moreTab {
+    display: none;
+    width: 225px;
+    position: absolute;
+    top: 111px;
+    left: 850px;
+    z-index: 9;
+}
+
+#moreTab ul {
+    list-style: none;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    line-height: 25px;
+    cursor: pointer;
 }
 
 #search {
@@ -136,6 +160,10 @@ nav>div {
 #logo>img {
     height: 25px;
     cursor: pointer;
+}
+
+footer {
+    background-color: black;
 }
 
 footer>div:nth-child(1),
@@ -164,7 +192,7 @@ footer>div>p {
     width: 70%;
     height: 50px;
     padding-left: 10px;
-    background-color: rgb(20, 20, 20);
+    background-color: black;
     color: teal;
 }
 
@@ -191,14 +219,13 @@ footer>div>p {
 #footer-container>div {
     width: 15%;
     margin: 30px 0;
-
 }
 
 #footer-container>div:nth-child(1) {
     width: 35%;
 }
 
-#footer-container>div>img {
+#footer-container>div>a img {
     width: 20%;
     margin-bottom: 20px;
     cursor: pointer;
@@ -211,6 +238,7 @@ footer>div>p {
 #social-media>img {
     width: 7%;
     background-color: white;
+    margin: 5px;
 }
 
 #footer-container>div>ul {
@@ -253,7 +281,7 @@ footer>div>p {
     color: rgba(255, 0, 0, 0.5);
     background-color: rgba(255, 0, 0, 0);
     padding-inline-start: 10px 0;
-    font-size: 50px;
+    font-size: 80px;
     font-weight: bolder;
     border: none;
     cursor: pointer;
@@ -359,31 +387,36 @@ footer>div>p {
     height: 100vh;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     top: 0;
     right: 0;
-    background-color: #111;
+    background-color: white;
     /* Black*/
-    color: white;
+    color: black;
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .sidepanel a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
     display: block;
     transition: 0.3s;
 }
 
-.sidepanel .closebtn {
+#closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
-    margin-left: 50px;
+}
+
+.sidepanel #closebtn>span+span {
+    position: relative;
+    left: 60px;
+    cursor: pointer;
+    font-size: 30px;
 }
 
 .openbtn {
@@ -397,4 +430,192 @@ footer>div>p {
 
 .openbtn:hover {
     background-color: #444;
+}
+
+#cart>div {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid teal;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+#cart>div>div {
+    margin: 5px;
+}
+
+#cart>div>div:first-child {
+    width: 25%
+}
+
+#cart>div>div:first-child>img {
+    width: 100%;
+}
+
+#cart p,
+#cart+div>p {
+    font-weight: bold;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+#cart+div>p>span {
+    position: absolute;
+    right: 5px;
+}
+
+#cart+div>button {
+    width: 90%;
+    padding: 10px 0;
+    cursor: pointer;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    border: 3px solid red;
+    border-radius: 5px;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+}
+
+#gifs video {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#gifs>div {
+    width: 19%;
+    margin: 20px 10px;
+    background-color: rgb(227, 227, 227);
+    line-height: 22px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#gifs>div>img {
+    width: 20%;
+    position: relative;
+    z-index: 11;
+    top: -25px;
+    right: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#blogs {
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#blogs>div {
+    width: 30%;
+}
+
+#blogs img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#blogs+div {
+    text-align: center;
+}
+
+#blogs+div>button {
+    padding: 20px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    margin: 30px 0;
+}
+
+#blogColor {
+    margin-top: 80px;
+    background-color: rgb(220, 220, 220);
+    color: black;
+    padding: 10px 0 0 0;
+}
+
+#crauser-3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#crauser-3>div {
+    padding: 20px;
+    width: 35%;
+}
+
+#crauser-3>div:nth-child(1) img {
+    width: 100%;
+}
+
+#crauser-3>div:nth-child(2) {
+    width: 40%;
+    text-align: left;
+    position: relative;
+    right: 100px;
+    padding-bottom: 100px;
+}
+
+#crauser-3 h3 {
+    color: red;
+}
+
+#crauser-3 h1,
+#crauser-3 h3 {
+    text-align: left;
+}
+
+#crauser-3 h1:first-child {
+    text-decoration: underline 3px red;
+}
+
+#about {
+    background-color: rgb(220, 220, 220);
+    color: black;
+    margin: 20px 0;
+    padding: 20px 0;
+}
+
+#about-us {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+#about-us>div {
+    width: 25%;
+    background-color: rgb(237, 29, 36);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#about-us h4 {
+    margin-top: 20px;
+    color: white;
+}
+
+#about-us button {
+    padding: 10px 80px;
+    background-color: white;
+    color: rgb(237, 29, 36);
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+#about-us img {
+    background-color: rgb(220, 220, 220);
+    width: 100%;
 }

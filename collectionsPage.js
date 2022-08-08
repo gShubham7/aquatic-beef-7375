@@ -354,19 +354,24 @@ function sortProds() {
             display_allProds(allProds);
         }
 
-        // if (selected == "htl") {
-        //     allProds.sort(function (a, b) {                
-        //         return b.price - a.price;
-        //     });
-        //     display_allProds(allProds);
-        // }
+        if (selected == "htl") {
 
-        // if (selected == "lth") {
-        //     allProds.sort(function (a, b) {
-        //         return a.price - b.price;
-        //     });
-        //     display_allProds(allProds);
-        // }         
+            allProds.sort(function (a, b) {
+                a = a.price.replace("₹", "").replace(",", "");
+                b = b.price.replace("₹", "").replace(",", "");
+                return b - a;
+            });
+            display_allProds(allProds);
+        }
+
+        if (selected == "lth") {
+            allProds.sort(function (a, b) {
+                a = a.price.replace("₹", "").replace(",", "");
+                b = b.price.replace("₹", "").replace(",", "");
+                return a - b;
+            });
+            display_allProds(allProds);
+        }
 
     } else {
         display_allProds(allProds);
